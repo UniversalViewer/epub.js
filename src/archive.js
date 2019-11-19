@@ -2,6 +2,7 @@ import {defer, isXml, parse} from "./utils/core";
 import request from "./utils/request";
 import mime from "../libs/mime/mime";
 import Path from "./utils/path";
+import JSZip from "jszip";
 
 /**
  * Handles Unzipping a requesting files from an Epub Archive
@@ -10,10 +11,10 @@ import Path from "./utils/path";
 class Archive {
 
 	constructor() {
-		this.zip = undefined;
+		this.zip = new JSZip();
 		this.urlCache = {};
 
-		this.checkRequirements();
+		//this.checkRequirements();
 
 	}
 
@@ -23,6 +24,7 @@ class Archive {
 	 * @private
 	 */
 	checkRequirements(){
+		console.log("check for jszip");
 		try {
 			if (typeof JSZip === "undefined") {
 				let JSZip = require("jszip");

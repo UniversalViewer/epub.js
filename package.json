@@ -1,5 +1,5 @@
 {
-  "name": "epubjs",
+  "name": "@edsilv/epubjs",
   "version": "0.3.85",
   "description": "Parse and Render Epubs",
   "main": "lib/index.js",
@@ -15,9 +15,9 @@
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js src; exit 0",
     "start": "./node_modules/.bin/webpack-dev-server --inline --d",
     "build": "./node_modules/.bin/webpack --progress",
-    "minify": "NODE_ENV=production npm run build",
-    "legacy": "LEGACY=true npm run build",
-    "productionLegacy": "NODE_ENV=production LEGACY=true npm run build",
+    "minify": "cross-env NODE_ENV=production npm run build",
+    "legacy": "cross-env LEGACY=true npm run build",
+    "productionLegacy": "cross-env NODE_ENV=production cross-env LEGACY=true npm run build",
     "compile": "./node_modules/.bin/babel --optional runtime -d lib/ src/",
     "watch": "./node_modules/.bin/babel --watch --optional runtime -d lib/ src/",
     "serve": "./node_modules/.bin/gulp serve",
@@ -78,6 +78,7 @@
   "dependencies": {
     "@types/jszip": "^3.1.4",
     "@types/localforage": "0.0.34",
+    "cross-env": "^6.0.3",
     "event-emitter": "^0.3.5",
     "jszip": "^3.1.5",
     "localforage": "^1.7.2",
