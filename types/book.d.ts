@@ -26,7 +26,8 @@ export interface BookOptions {
   replacements?: string,
   canonical?: (path: string) => string,
   openAs?: string,
-  store?: string
+  store?: string,
+  generatePagination?: boolean
 }
 
 export default class Book {
@@ -51,6 +52,7 @@ export default class Book {
     spine: Spine;
     locations: Locations;
     navigation: Navigation;
+    package: any;
     pageList: PageList;
     url: Url;
     path: Path;

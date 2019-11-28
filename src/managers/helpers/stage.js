@@ -160,6 +160,7 @@ class Stage {
 	}
 
 	size(width, height){
+
 		var bounds;
 		let _width = width || this.settings.width;
 		let _height = height || this.settings.height;

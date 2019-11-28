@@ -572,6 +572,7 @@ class Rendition {
 	 * @param  {string} flow
 	 */
 	flow(flow){
+
 		var _flow = flow;
 		if (flow === "scrolled" ||
 				flow === "scrolled-doc" ||
@@ -608,6 +609,7 @@ class Rendition {
 	 * @param  {object} settings
 	 */
 	layout(settings){
+
 		if (settings) {
 			this._layout = new Layout(settings);
 			this._layout.spread(settings.spread, this.settings.minSpreadWidth);
