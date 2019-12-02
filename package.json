@@ -1,6 +1,6 @@
 {
   "name": "@edsilv/epubjs",
-  "version": "0.3.85-debug.5",
+  "version": "0.3.85-debug.6",
   "description": "Parse and Render Epubs",
   "main": "lib/index.js",
   "module": "src/index.js",
