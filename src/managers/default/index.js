@@ -186,7 +186,6 @@ class DefaultViewManager {
 	}
 
 	onResized(e) {
-		console.log("epubjs default manager resize");
 		this.resize();
 	}
 
