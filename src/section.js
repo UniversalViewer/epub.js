@@ -3,6 +3,7 @@ import EpubCFI from "./epubcfi";
 import Hook from "./utils/hook";
 import { sprint } from "./utils/core";
 import { replaceBase } from "./utils/replacements";
+import { XMLSerializer as XMLDOMSerializer } from "xmldom/dom-parser";
 
 /**
  * Represents a Section of the Book
@@ -95,7 +96,7 @@ class Section {
 				var isIE = userAgent.indexOf('Trident') >= 0;
 				var Serializer;
 				if (typeof XMLSerializer === "undefined" || isIE) {
-					Serializer = require("xmldom/dom-parser").XMLSerializer;
+					Serializer = XMLDOMSerializer;
 				} else {
 					Serializer = XMLSerializer;
 				}
