@@ -319,12 +319,6 @@ class Rendition {
 
 		section = this.book.spine.get(target);
 
-		if (!section && target.indexOf("/") !== -1) {
-			// try splitting the target on "/"
-			var splitTarget = target.split("/")[1];
-			section = this.book.spine.get(splitTarget);
-		}
-
 		if(!section){
 			displaying.reject(new Error("No Section Found"));
 			return displayed;

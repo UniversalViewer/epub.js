@@ -141,7 +141,7 @@ class Spine {
 		} else if(typeof target === "string") {
 			// Remove fragments
 			target = target.split("#")[0];
-			index = this.spineByHref[target] || this.spineByHref[encodeURI(target)];
+			index = this.spineByHref[target] || this.spineByHref[encodeURI(target)] || Object.keys(this.spineByHref).findIndex(x => x.indexOf(target) !== -1);
 		}
 
 		return this.spineItems[index] || null;
