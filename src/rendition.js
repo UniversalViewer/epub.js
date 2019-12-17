@@ -319,10 +319,6 @@ class Rendition {
 
 		section = this.book.spine.get(target);
 
-		if (!section) {
-			section = this.book.spine.get("xhtml/" + target);
-		}
-
 		if(!section){
 			displaying.reject(new Error("No Section Found"));
 			return displayed;
