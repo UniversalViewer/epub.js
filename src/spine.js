@@ -53,17 +53,13 @@ class Spine {
 			item.index = index;
 			item.cfiBase = this.epubcfi.generateChapterComponent(this.spineNodeIndex, item.index, item.idref);
 
-			if(item.href) {
+			if (item.href) {
 				item.url = resolver(item.href, true);
 				item.canonical = canonical(item.href);
 			}
 
 			if(manifestItem) {
-				if (manifestItem.href.indexOf("/") !== -1) {
-					item.href = manifestItem.href.split("/")[1];
-				} else {
-					item.href = manifestItem.href;
-				}
+				item.href = manifestItem.href;
 				item.url = resolver(item.href, true);
 				item.canonical = canonical(item.href);
 
