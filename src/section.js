@@ -45,7 +45,7 @@ class Section {
 	 * @return {document} a promise with the xml document
 	 */
 	load(_request){
-		var request = _request || this.request || require("./utils/request");
+		var request = _request || this.request;
 		var loading = new defer();
 		var loaded = loading.promise;
 
